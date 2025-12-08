@@ -1,0 +1,102 @@
+---
+
+---
+
+<section id="contact" class="section">
+    <div class="container">
+        <h2 class="section-title">Let's Connect</h2>
+
+        <div class="links">
+            <a href="mailto:contact.bmteo@gmail.com" class="contact-link">
+                <span class="label">Email</span>
+                <span class="value">contact.bmteo@gmail.com</span>
+            </a>
+            <a
+                href="https://linkedin.com/in/bmteo"
+                target="_blank"
+                class="contact-link"
+            >
+                <span class="label">LinkedIn</span>
+                <span class="value">in/bmteo</span>
+            </a>
+            <a
+                href="/Files/TechnicalRESUME.pdf"
+                target="_blank"
+                class="contact-link"
+            >
+                <span class="label">Location</span>
+                <span class="value">Vancouver, BC</span>
+            </a>
+        </div>
+
+        <footer class="footer">
+            <p>
+                Built with Astro. &copy; {new Date().getFullYear()} Benjamin Teo.
+            </p>
+        </footer>
+    </div>
+</section>
+
+<style>
+    .section {
+        padding: 6rem 1.5rem 2rem;
+        max-width: var(--spacing-container);
+        margin: 0 auto;
+    }
+
+    .section-title {
+        font-size: 3.5rem;
+        margin-bottom: 4rem;
+        color: var(--color-text-primary);
+    }
+
+    .links {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-bottom: 6rem;
+    }
+
+    .contact-link {
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+        border: 1px solid var(--color-text-secondary);
+        transition: all 0.2s ease;
+        text-align: center;
+        align-items: center;
+    }
+
+    .contact-link:hover {
+        background: var(--color-text-primary);
+    }
+
+    .contact-link:hover .label,
+    .contact-link:hover .value {
+        color: var(--color-bg);
+    }
+
+    .label {
+        font-size: 1rem;
+        color: var(--color-text-secondary);
+        margin-bottom: 0.5rem;
+        font-family: var(--font-body);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .value {
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: var(--color-text-primary);
+        font-family: var(--font-heading);
+    }
+
+    .footer {
+        text-align: center;
+        color: var(--color-text-secondary);
+        font-size: 0.9rem;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+</style>

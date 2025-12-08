@@ -1,0 +1,116 @@
+---
+
+---
+
+<section id="about" class="hero">
+    <div class="content">
+        <span class="greeting">Heya, I'm</span>
+        <h1>Benjamin Teo</h1>
+        <p class="subtitle">Senior Software Engineer</p>
+        <p class="description">
+            Specializing in large-scale distributed systems and technical
+            leadership. Leading cross-functional, full-stack projects features
+            for multi-tenant platforms across Amazon's lines of business.
+        </p>
+        <div class="cta-group">
+            <a href="#contact" class="btn btn-primary">Let's Connect</a>
+            <a
+                href="/Files/TechnicalRESUME.pdf"
+                target="_blank"
+                class="btn btn-secondary">Resume</a
+            >
+        </div>
+    </div>
+</section>
+
+<style>
+    .hero {
+        min-height: 85vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 1.5rem;
+        max-width: var(--spacing-container);
+        margin: 0 auto;
+        text-align: left;
+    }
+
+    .content {
+        max-width: 800px;
+    }
+
+    .greeting {
+        color: var(--color-accent);
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+        display: block;
+        font-family: var(--font-body);
+    }
+
+    h1 {
+        font-size: 5rem;
+        line-height: 1.1;
+        margin-bottom: 0.5rem;
+        color: var(--color-text-primary);
+    }
+
+    .subtitle {
+        font-size: 1.5rem;
+        color: var(--color-text-secondary);
+        margin-bottom: 2rem;
+        font-family: var(--font-body);
+        font-weight: 300;
+    }
+
+    .description {
+        font-size: 1.1rem;
+        color: var(--color-text-primary);
+        max-width: 650px;
+        margin-bottom: 2.5rem;
+        line-height: 1.6;
+        opacity: 0.9;
+    }
+
+    .cta-group {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .btn {
+        padding: 1rem 2rem;
+        font-family: var(--font-heading);
+        font-size: 1.2rem;
+        border-radius: 0px; /* Minimalist sharp edges or keep rounded? Reference has clean look. Let's go slight round 4px */
+        border-radius: 4px;
+        transition: all 0.2s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .btn-primary {
+        background: var(--color-text-primary);
+        color: var(--color-bg);
+        border: 2px solid var(--color-text-primary);
+    }
+
+    .btn-primary:hover {
+        background: transparent;
+        color: var(--color-text-primary);
+    }
+
+    .btn-secondary {
+        background: transparent;
+        color: var(--color-text-primary);
+        border: 2px solid var(--color-text-primary);
+    }
+
+    .btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 3.5rem;
+        }
+    }
+</style>

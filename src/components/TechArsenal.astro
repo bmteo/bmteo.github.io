@@ -1,0 +1,172 @@
+---
+import { Icon } from "astro-icon/components";
+
+const languagesAndFrameworks = [
+    { name: "Java", type: "language" },
+    { name: "JavaScript", type: "language" },
+    { name: "TypeScript", type: "language" },
+    { name: "Python", type: "language" },
+    { name: "React", type: "framework" },
+    { name: "Vue", type: "framework" },
+];
+
+const awsServices = [
+    { name: "Lambda", icon: "simple-icons:awslambda" },
+    { name: "API Gateway", icon: "simple-icons:amazonapigateway" },
+    { name: "Route53", icon: "simple-icons:amazonroute53" },
+    { name: "DynamoDB", icon: "simple-icons:amazondynamodb" },
+    { name: "S3", icon: "simple-icons:amazons3" },
+    { name: "OpenSearch", icon: "simple-icons:amazonaws" },
+    { name: "ElastiCache", icon: "simple-icons:amazonaws" },
+    { name: "CloudWatch", icon: "simple-icons:amazoncloudwatch" }, // usually exists
+    { name: "ECS Fargate", icon: "simple-icons:amazonecs" },
+    { name: "Glue", icon: "simple-icons:amazonaws" },
+    { name: "Athena", icon: "simple-icons:amazonaws" },
+    { name: "Neptune", icon: "simple-icons:amazonaws" },
+];
+
+// Fallback logic in template for missing icons or use specific map
+---
+
+<section id="skills" class="section">
+    <div class="container">
+        <h2 class="section-title">Technical Skills</h2>
+
+        <div class="grid">
+            <!-- Languages & Frameworks Category -->
+            <div class="category">
+                <h3>Languages / Frameworks</h3>
+                <ul class="skill-list">
+                    {
+                        languagesAndFrameworks.map((skill) => (
+                            <li class={`skill-item ${skill.type}`}>
+                                {skill.name}
+                            </li>
+                        ))
+                    }
+                </ul>
+                <div class="legend">
+                    <span class="legend-item language">Language</span>
+                    <span class="legend-item framework">Framework</span>
+                </div>
+            </div>
+
+            <!-- AWS Category -->
+            <div class="category">
+                <h3>AWS Services</h3>
+                <ul class="skill-list">
+                    {
+                        awsServices.map((skill) => (
+                            <li class="skill-item aws">
+                                <Icon name={skill.icon} class="icon" />
+                                <span>{skill.name}</span>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .section {
+        padding: 6rem 1.5rem;
+        max-width: var(--spacing-container);
+        margin: 0 auto;
+    }
+
+    .section-title {
+        font-size: 3.5rem;
+        margin-bottom: 4rem;
+        color: var(--color-text-primary);
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+    }
+
+    h3 {
+        font-size: 1.8rem;
+        color: var(--color-text-secondary);
+        margin-bottom: 2rem;
+        font-family: var(--font-heading);
+    }
+
+    .skill-list {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .skill-item {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: transform 0.2s ease;
+    }
+
+    .skill-item:hover {
+        transform: translateY(-2px);
+    }
+
+    /* Color Coding */
+    .skill-item.language {
+        background: #e65100; /* Orange for Languages */
+        color: white;
+    }
+
+    .skill-item.framework {
+        background: #2e7d32; /* Green for Frameworks */
+        color: white;
+    }
+
+    .skill-item.aws {
+        background: #232f3e; /* AWS Dark Blue */
+        color: #ff9900; /* AWS Orange Text */
+        border: 1px solid #ff9900;
+    }
+
+    .icon {
+        width: 1.2rem;
+        height: 1.2rem;
+    }
+
+    .legend {
+        margin-top: 1.5rem;
+        display: flex;
+        gap: 1rem;
+        font-size: 0.8rem;
+        color: var(--color-text-secondary);
+    }
+
+    .legend-item::before {
+        content: "";
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 2px;
+        margin-right: 5px;
+    }
+
+    .legend-item.language::before {
+        background: #e65100;
+    }
+    .legend-item.framework::before {
+        background: #2e7d32;
+    }
+
+    @media (max-width: 768px) {
+        .grid {
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+    }
+</style>

@@ -1,0 +1,75 @@
+---
+const navItems = [
+    { name: "About", href: "#about" },
+    { name: "Skills", href: "#skills" },
+    { name: "Journey", href: "#journey" },
+    { name: "Contact", href: "#contact" },
+];
+---
+
+<nav class="navbar">
+    <div class="container">
+        <a href="#" class="logo">BT.</a>
+        <ul class="nav-links">
+            {
+                navItems.map((item) => (
+                    <li>
+                        <a href={item.href}>{item.name}</a>
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
+</nav>
+
+<style>
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background: rgba(15, 17, 21, 0.8);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        padding: 1rem 0;
+    }
+
+    .container {
+        max-width: var(--spacing-container);
+        margin: 0 auto;
+        padding: 0 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--color-text-primary);
+        letter-spacing: -0.5px;
+    }
+
+    .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+    }
+
+    .nav-links a {
+        font-size: 0.95rem;
+        color: var(--color-text-secondary);
+        font-weight: 500;
+    }
+
+    .nav-links a:hover {
+        color: var(--color-accent);
+    }
+
+    @media (max-width: 768px) {
+        .nav-links {
+            display: none; /* simple mobile hide for now, or add hamburger later */
+        }
+    }
+</style>
