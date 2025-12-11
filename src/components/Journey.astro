@@ -135,4 +135,41 @@ const journeyItems = [
         left: 0;
         color: var(--color-text-secondary);
     }
+
+    /* Mobile Optimizations */
+    @media (max-width: 768px) {
+        .section {
+            padding: 4rem 1rem;
+        }
+
+        .timeline {
+            padding-left: 20px; /* Reduced from 40px */
+            margin-left: 0;
+        }
+
+        .timeline-marker {
+            left: -26px; /* Adjusted for new padding */
+            width: 10px;
+            height: 10px;
+        }
+
+        h3 {
+            font-size: 1.3rem; /* Reduced from 2rem to prevent wrapping */
+            margin-bottom: 0.4rem;
+        }
+
+        .company {
+            font-size: 1rem;
+        }
+
+        .period {
+            font-size: 0.85rem;
+        }
+
+        .details li {
+            font-size: 0.95rem;
+            margin-bottom: 0.6rem;
+            line-height: 1.5;
+        }
+    }
 </style>
